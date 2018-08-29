@@ -1,1 +1,0 @@
-console.log("listando os produtos");
