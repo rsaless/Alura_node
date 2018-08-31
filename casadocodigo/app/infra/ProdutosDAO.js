@@ -1,22 +1,15 @@
-function ProdutosDAO(connection){
+function ProdutosDAO(connection) {
     this._connection = connection;
 }
 
-ProdutosDAO.prototype.lista = function (callback) {
+ProdutosDAO.prototype.lista = function(callback) {
     this._connection.query('select * from livros', callback);
-};
+}
 
-ProdutosDAO.prototype.salva = function (produto, callback) {
-    this._connection.query('insert into livros set ?',produto, callback);
-};
+ProdutosDAO.prototype.salva = function(produto, callback) {
+    this._connection.query('insert into livros set ?', produto, callback);
+}
 
-module.exports = function () {
+module.exports = function() {
     return ProdutosDAO;
 };
-
-/*
-    this.remove = function () {
-        connection.query('select * from livros', callback);
-    }
-
- */
