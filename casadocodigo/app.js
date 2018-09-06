@@ -5,7 +5,11 @@ var io = require('socket.io')(http);
 app.set('io',io);
 
 var porta = process.env.PORT || 3000;
+var server = http.listen(porta, function () {
 
-http.listen(porta, function() {
-    console.log("Server running at Heroku on: http://localhost:"+porta);
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('Server running at http://%s:%s', host, port);
+
 });
